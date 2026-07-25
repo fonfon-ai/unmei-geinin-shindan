@@ -8,8 +8,10 @@ import { deriveHumor, deriveVerbalVisualBalance } from '../engine/humor';
 import { sanitizeLinks, sanitizeUrl } from '../engine/url';
 import { RAW_COMEDIANS } from './entities.comedians';
 import { RAW_COMEDIANS_2 } from './entities.comedians2';
+import { RAW_COMEDIANS_3 } from './entities.comedians3';
 import { RAW_RAKUGO } from './entities.rakugo';
 import { RAW_RAKUGO_2 } from './entities.rakugo2';
+import { RAW_RAKUGO_3 } from './entities.rakugo3';
 import { RAW_PROGRAMS } from './programs';
 import { RAW_CHANNELS } from './channels';
 
@@ -124,8 +126,10 @@ function finalizeProgram(raw: RawProgram): Program {
 const rawEntities: RawEntity[] = [
   ...RAW_COMEDIANS,
   ...RAW_COMEDIANS_2,
+  ...RAW_COMEDIANS_3,
   ...RAW_RAKUGO,
   ...RAW_RAKUGO_2,
+  ...RAW_RAKUGO_3,
 ];
 
 // ID重複を検出(ビルド時ガード)。重複があれば早期にエラーで気づけるようにする。

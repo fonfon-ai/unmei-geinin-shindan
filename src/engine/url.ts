@@ -63,6 +63,9 @@ export const ALLOWED_HOST_SUFFIXES: string[] = [
   'kamigata.jp',
   'kamigatarakugo.jp',
   'beicho.co.jp',
+  '5enrakuichimonkai.jp',
+  'enraku7.com',
+  'mayurika-official.com',
   'rakugo-kyokai.or.jp',
   'ntv.co.jp', // 笑点(日本テレビ)
   // 放送局(番組公式)
