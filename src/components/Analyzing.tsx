@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const STEPS = [
   'あなたの回答を読み解いています',
   '笑いの好みの傾向を推定しています',
-  '運命の芸人を探しています',
+  '運命のお笑いを探しています',
 ];
 
 export function Analyzing({ onDone }: { onDone: () => void }) {

@@ -9,7 +9,7 @@ afterEach(cleanup);
 describe('UI レンダリング', () => {
   it('ランディングが表示され、診断を開始できる', () => {
     render(<App />);
-    expect(screen.getByText('あなたを笑わせる、運命の芸人が見つかる。')).toBeInTheDocument();
+    expect(screen.getByText('あなたを笑わせる、運命のお笑いが見つかる。')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /無料で診断する/ }));
     // 最初の質問(radiogroup)が表示される
     expect(screen.getByRole('radiogroup')).toBeInTheDocument();
@@ -20,9 +20,9 @@ describe('UI レンダリング', () => {
     const result = runDiagnosis({ holiday: 'home_relax', mood: 'tired', watchtime: 'long' });
     render(<Result result={result} onRestart={() => {}} />);
     expect(screen.getByText(result.type.name)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'あなたの運命の芸人' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'あなたの運命のお笑い' })).toBeInTheDocument();
     // 共有プレビューにハッシュタグが含まれ、個別回答は含まれない
-    const preview = screen.getByText(/#運命の芸人診断/);
+    const preview = screen.getByText(/#運命のお笑い診断/);
     expect(preview.textContent).not.toMatch(/tired|home_relax|holiday/);
   });
 

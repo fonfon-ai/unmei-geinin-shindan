@@ -1,5 +1,5 @@
 // ============================================================================
-// 運命の芸人診断 — 型定義
+// 運命のお笑い診断 — 型定義
 // このアプリは実行時にLLM/APIを一切使わず、以下の決定論的データ・ロジックだけで
 // 動作する。回答は送信も保存もしない。
 // ============================================================================
@@ -221,7 +221,7 @@ export interface DiagnosisResult {
   type: DiagnosisType;
   humorPreference: HumorVector;
   traits: TraitVector;
-  /** 本命の運命の芸人(2-3組) */
+  /** 本命の運命のお笑い(2-3組) */
   destined: RecommendationReasonView[];
   /** 初心者向け(1-3) */
   beginner: RecommendationReasonView[];

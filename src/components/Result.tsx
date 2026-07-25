@@ -194,7 +194,7 @@ export function Result({
 
       <section className="section" aria-labelledby="destined-h">
         <div className="section-head">
-          <h2 id="destined-h">あなたの運命の芸人</h2>
+          <h2 id="destined-h">あなたの運命のお笑い</h2>
         </div>
         <p className="section-lead">まずはこの人たちから。ピンと来た一組で大丈夫です。</p>
         <div className="rec-grid">

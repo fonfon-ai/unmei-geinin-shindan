@@ -19,7 +19,7 @@
     <path d="M92 120 q58 44 116 0" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round"/>
   </g>
   <path d="M120 120 l10 26 l28 4 l-20 18 l6 28 l-24 -15 l-24 15 l6 -28 l-20 -18 l28 -4 z" fill="#d98a2b"/>
-  <text x="90" y="330" font-family="system-ui, sans-serif" font-size="82" font-weight="800" fill="#262320">運命の芸人診断</text>
-  <text x="92" y="410" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#5c574f">あなたを笑わせる、運命の芸人が見つかる。</text>
+  <text x="90" y="330" font-family="system-ui, sans-serif" font-size="82" font-weight="800" fill="#262320">運命のお笑い診断</text>
+  <text x="92" y="410" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#5c574f">あなたを笑わせる、運命のお笑いが見つかる。</text>
   <text x="92" y="470" font-family="system-ui, sans-serif" font-size="28" fill="#857f75">生活習慣と性格の質問から、芸人・落語家・番組・公式動画を提案</text>
 </svg>

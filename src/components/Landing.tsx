@@ -5,8 +5,8 @@ import { CATALOG_STATS } from '../data/catalog';
 export function Landing({ onStart }: { onStart: () => void }) {
   return (
     <main className="app-shell landing">
-      <span className="brand-badge">運命の芸人診断</span>
-      <h1>あなたを笑わせる、運命の芸人が見つかる。</h1>
+      <span className="brand-badge">運命のお笑い診断</span>
+      <h1>あなたを笑わせる、運命のお笑いが見つかる。</h1>
       <HeroArt />
       <p className="lead">
         休日の過ごし方や生活習慣、性格についての簡単な質問に答えるだけ。

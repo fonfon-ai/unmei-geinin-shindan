@@ -84,7 +84,7 @@ UI（`src/components/ui.test.tsx`）:
 公開URL: https://fonfon-ai.github.io/unmei-geinin-shindan/
 （GitHub Actions の Deploy ワークフローが成功: build 28s / deploy 8s。HTTPS 強制。）
 
-- ✅ トップページが表示される（`<title>` = 「運命の芸人診断 | あなたを笑わせる、運命の芸人が見つかる。」を本番URLで確認）
+- ✅ トップページが表示される（`<title>` = 「運命のお笑い診断 | あなたを笑わせる、運命のお笑いが見つかる。」を本番URLで確認）
 - ✅ CSS が 404 にならない（`/unmei-geinin-shindan/assets/index-*.css` が実CSSを返す）
 - ✅ JS が 404 にならない（`/unmei-geinin-shindan/assets/index-*.js` が実JSを返す。Vite の modulepreload polyfill はバンドル内で、HTML にインライン script なし＝CSP `script-src 'self'` と整合）
 - ✅ プロジェクトページ配下（サブパス）で base が正しく解決
