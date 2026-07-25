@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!--
+      Content-Security-Policy (meta版)
+      GitHub Pages は HTTP レスポンスヘッダーを設定できないため、meta で表現可能な範囲のみ適用する。
+      frame-ancestors / X-Frame-Options 等は meta では効かない点を docs/security-review.md に明記。
+      このアプリは実行時に外部通信しない(外部リンクは別タブ遷移のみ)ため self 中心で成立する。
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'none'; manifest-src 'self'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>運命の芸人診断 | あなたを笑わせる、運命の芸人が見つかる。</title>
+    <meta
+      name="description"
+      content="休日の過ごし方や生活習慣、性格についての簡単な質問に答えるだけ。まだ知らない芸人・落語家・番組・動画との出会いを提案します。"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="canonical" href="https://fonfon-ai.github.io/unmei-geinin-shindan/" />
+
+    <!-- OGP / Twitter Card -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="運命の芸人診断" />
+    <meta property="og:title" content="運命の芸人診断 | あなたを笑わせる、運命の芸人が見つかる。" />
+    <meta
+      property="og:description"
+      content="生活習慣や性格の簡単な質問に答えるだけ。まだ知らない芸人・落語家・番組・動画との出会いを提案します。"
+    />
+    <meta property="og:url" content="https://fonfon-ai.github.io/unmei-geinin-shindan/" />
+    <meta property="og:image" content="https://fonfon-ai.github.io/unmei-geinin-shindan/og-image.svg" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="運命の芸人診断" />
+    <meta
+      name="twitter:description"
+      content="あなたを笑わせる、運命の芸人が見つかる。生活と性格から診断します。"
+    />
+    <meta name="twitter:image" content="https://fonfon-ai.github.io/unmei-geinin-shindan/og-image.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      このアプリは JavaScript が必要です。診断はすべてブラウザ内で完結し、回答が外部に送信されることはありません。
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

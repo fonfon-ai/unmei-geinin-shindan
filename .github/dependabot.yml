@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # npm 依存関係の更新(週次)
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      # 開発ツール系はまとめて1つのPRに
+      dev-dependencies:
+        dependency-type: development
+
+  # GitHub Actions の更新(週次)
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

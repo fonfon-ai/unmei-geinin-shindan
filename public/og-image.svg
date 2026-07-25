@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f4ef"/>
+      <stop offset="1" stop-color="#efece4"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d98a2b"/>
+      <stop offset="1" stop-color="#c8503f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="480" r="120" fill="#fbead0"/>
+  <g transform="translate(820,120)">
+    <rect x="0" y="0" width="300" height="180" rx="40" fill="url(#ac)"/>
+    <path d="M60 180 l-24 44 l60 -30 z" fill="url(#ac)"/>
+    <circle cx="105" cy="90" r="18" fill="#fff"/>
+    <circle cx="195" cy="90" r="18" fill="#fff"/>
+    <path d="M92 120 q58 44 116 0" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <path d="M120 120 l10 26 l28 4 l-20 18 l6 28 l-24 -15 l-24 15 l6 -28 l-20 -18 l28 -4 z" fill="#d98a2b"/>
+  <text x="90" y="330" font-family="system-ui, sans-serif" font-size="82" font-weight="800" fill="#262320">運命の芸人診断</text>
+  <text x="92" y="410" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#5c574f">あなたを笑わせる、運命の芸人が見つかる。</text>
+  <text x="92" y="470" font-family="system-ui, sans-serif" font-size="28" fill="#857f75">生活習慣と性格の質問から、芸人・落語家・番組・公式動画を提案</text>
+</svg>

@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 既定の権限は空にして、必要なジョブにだけ最小権限を付与する
+permissions: {}
+
+# 進行中のデプロイをキャンセルせず、順番に流す
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install (clean, from lockfile)
+        run: npm ci
+
+      - name: Typecheck / Lint / Test
+        run: |
+          npm run typecheck
+          npm run lint
+          npm run test
+
+      - name: Build
+        run: npm run build
+        env:
+          # プロジェクトページ配下の base path。リポジトリ名に合わせる。
+          BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write # GitHub Pages への公開のみ
+      id-token: write # OIDC トークン(Pages デプロイに必要)
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
