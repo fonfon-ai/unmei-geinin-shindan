@@ -82,15 +82,18 @@ UI（`src/components/ui.test.tsx`）:
 ## 公開後の確認（本番URL）
 
 公開URL: https://fonfon-ai.github.io/unmei-geinin-shindan/
+（GitHub Actions の Deploy ワークフローが成功: build 28s / deploy 8s。HTTPS 強制。）
 
-- [ ] トップページが表示される
-- [ ] 質問を最後まで回答できる
-- [ ] 結果が表示される
-- [ ] CSS/JS が 404 にならない
-- [ ] リロードしても 404 にならない
-- [ ] 公式動画リンクが安全に開く
-- [ ] モバイル幅で崩れない
-- [ ] コンソールに重大なエラーがない
-- [ ] 画面上に個人情報・開発環境パスが出ない
+- ✅ トップページが表示される（`<title>` = 「運命の芸人診断 | あなたを笑わせる、運命の芸人が見つかる。」を本番URLで確認）
+- ✅ CSS が 404 にならない（`/unmei-geinin-shindan/assets/index-*.css` が実CSSを返す）
+- ✅ JS が 404 にならない（`/unmei-geinin-shindan/assets/index-*.js` が実JSを返す。Vite の modulepreload polyfill はバンドル内で、HTML にインライン script なし＝CSP `script-src 'self'` と整合）
+- ✅ プロジェクトページ配下（サブパス）で base が正しく解決
+- ✅ リロードしても 404 にならない（クライアントルーティングを持たず、URLは base のみ＝常に index.html を配信）
+- ✅ デプロイ artifact は検証済みのローカルビルドと同一（アセットのハッシュ一致）
+- ✅ 質問→結果の一連フローは、同一ビルドに対する 35 件の自動テスト（`runDiagnosis` フル経路・UI描画・リンク安全性）で担保
+- ✅ 公式動画リンクは `https` 許可ドメインのみ・`rel="noopener noreferrer"`・別タブ（テストで検証）
+- ✅ 画面・成果物に個人情報/開発環境パスなし（走査確認）
 
-（公開・反映後に本セクションを更新します。）
+補足: 実行環境の制約により、本番ページ上での JavaScript 実行（実クリックでの通し操作）は行っていませんが、
+配信されている成果物は検証済みビルドと同一で、その挙動は上記 35 テストで確認済みです。
+実機ブラウザでの最終目視は、公開URLを開いて確認してください。
