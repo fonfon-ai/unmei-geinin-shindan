@@ -25,7 +25,7 @@
 | 推薦データ内URLを許可リスト方式で検証 | ✅ | `src/engine/url.ts`。許可ドメインの `https` のみ描画 |
 | URL は `https` のみ許可 | ✅ | 同上 |
 | URLパラメータ/ハッシュを HTML 表示しない | ✅ | クエリ/ハッシュを読み取って描画する処理なし |
-| SNS共有文は固定テンプレート＋安全エンコード | ✅ | `URLSearchParams` でエンコード。含めるのはタイプ名と芸人名のみ |
+| 外部SNSへの共有機能を持たない | ✅ | X/LINE等への共有ボタンは実装しない。結果を外部送信・投稿する導線なし |
 | 不要な外部通信を発生させない | ✅ | 実行時通信は外部リンクの別タブ遷移のみ |
 | 不要な依存を追加しない / `npm audit` | ✅ | 依存は必要最小限。`npm audit`: **0 vulnerabilities** |
 | GitHub Actions を最小権限に | ✅ | 既定 `permissions: {}`、deployのみ `pages: write`/`id-token: write` |

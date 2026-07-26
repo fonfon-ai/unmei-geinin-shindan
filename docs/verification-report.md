@@ -47,7 +47,7 @@ URL検証（`src/engine/url.test.ts`）:
 UI（`src/components/ui.test.tsx`）:
 
 - ✅ ランディング表示・診断開始（radiogroup 表示）
-- ✅ 結果画面の主要セクション描画、共有プレビューに個別回答が含まれない
+- ✅ 結果画面の主要セクション描画（タイプ名・相性セクション等。外部SNS共有機能は持たない）
 - ✅ 全外部リンクが `target="_blank"` かつ `rel="noopener noreferrer"`、`href` は `https` のみ
 - ✅ 再診断ボタン動作、本命カードに相性%と芸人名
 

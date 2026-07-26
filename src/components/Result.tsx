@@ -1,13 +1,6 @@
-import { useState } from 'react';
 import type { DiagnosisResult, Program } from '../types';
 import { RecommendationCard } from './RecommendationCard';
 import { TypeEmblem } from './Art';
-import {
-  buildShareText,
-  buildXShareUrl,
-  buildLineShareUrl,
-  buildWebShareData,
-} from '../engine/share';
 
 const REPO_URL = 'https://github.com/fonfon-ai/unmei-geinin-shindan';
 
@@ -57,81 +50,6 @@ function ProgramCard({ program }: { program: Program }) {
         </div>
       )}
     </article>
-  );
-}
-
-function ShareSection({ result }: { result: DiagnosisResult }) {
-  const [toast, setToast] = useState<string | null>(null);
-
-  function showToast(msg: string) {
-    setToast(msg);
-    window.setTimeout(() => setToast(null), 2200);
-  }
-
-  async function nativeShare() {
-    const data = buildWebShareData(result);
-    if (navigator.share) {
-      try {
-        await navigator.share(data);
-      } catch {
-        /* ユーザーがキャンセルした等。無視。 */
-      }
-    } else {
-      window.open(buildXShareUrl(result), '_blank', 'noopener,noreferrer');
-    }
-  }
-
-  async function copyText() {
-    const text = `${buildShareText(result)}\n${buildWebShareData(result).url}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      showToast('共有文をコピーしました');
-    } catch {
-      showToast('コピーできませんでした');
-    }
-  }
-
-  return (
-    <section className="section" aria-labelledby="share-h">
-      <div className="card share-card">
-        <h2 id="share-h">結果をシェアする</h2>
-        <p className="section-lead" style={{ marginBottom: 4 }}>
-          共有されるのはタイプ名と芸人名だけ。あなたの回答は含まれません。
-        </p>
-        <div className="share-preview" aria-hidden="true">
-          {buildShareText(result)}
-        </div>
-        <div className="share-buttons">
-          <button type="button" className="btn btn-primary" onClick={nativeShare}>
-            シェアする
-          </button>
-          <a
-            className="btn btn-ghost"
-            href={buildXShareUrl(result)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Xで投稿
-          </a>
-          <a
-            className="btn btn-ghost"
-            href={buildLineShareUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LINEで送る
-          </a>
-          <button type="button" className="btn btn-ghost" onClick={copyText}>
-            文をコピー
-          </button>
-        </div>
-      </div>
-      {toast && (
-        <div className="toast" role="status">
-          {toast}
-        </div>
-      )}
-    </section>
   );
 }
 
@@ -270,8 +188,6 @@ export function Result({
           </div>
         </section>
       )}
-
-      <ShareSection result={result} />
 
       <div className="result-actions">
         <button type="button" className="btn btn-primary" onClick={onRestart}>

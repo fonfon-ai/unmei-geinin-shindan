@@ -17,7 +17,7 @@
 - URL は許可リスト方式で検証し、`https` の公式ドメインのみを描画する。`javascript:` 等のスキームは拒否。
 - 外部リンクには `rel="noopener noreferrer"` を付与する。
 - URL のクエリ・ハッシュの内容を HTML として表示しない。
-- SNS共有文は固定テンプレートと安全にエンコードした値のみで構成する。
+- 外部SNS（X・LINE等）への共有機能を持たない（結果を外部へ送信・投稿する導線がない）。
 - 本番ビルドで source map を公開しない。
 - Content-Security-Policy を meta タグで宣言（GitHub Pages で表現可能な範囲）。
 

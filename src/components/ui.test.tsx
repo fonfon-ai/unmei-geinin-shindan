@@ -21,9 +21,7 @@ describe('UI レンダリング', () => {
     render(<Result result={result} onRestart={() => {}} />);
     expect(screen.getByText(result.type.name)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'あなたの運命のお笑い' })).toBeInTheDocument();
-    // 共有プレビューにハッシュタグが含まれ、個別回答は含まれない
-    const preview = screen.getByText(/#運命のお笑い診断/);
-    expect(preview.textContent).not.toMatch(/tired|home_relax|holiday/);
+    expect(screen.getByRole('heading', { name: 'あなたと笑いの相性' })).toBeInTheDocument();
   });
 
   it('外部リンクはすべて rel="noopener noreferrer" と target="_blank"', () => {
